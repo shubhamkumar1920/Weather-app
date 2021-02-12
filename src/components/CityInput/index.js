@@ -6,7 +6,7 @@ const CityInput = ({city,setCity,fetchCityWeather})=> {
     const handleInputChange = (event) => {
         setCity(event.target.value);
     };
-    console.log("city is ", city);
+    // console.log("city is ", city);
     const handleSubmit = () => {
         if(!city) {
             setError("City field is empty");

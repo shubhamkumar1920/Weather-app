@@ -6,7 +6,7 @@ import CityWeather from "./components/CityWeather";
 function App() {
   const [city,setCity] =React.useState("");
   const [cityWeather,setCityWeather] = React.useState({});
-  const [cityTemp,setCityTemp] = React.useState({});
+  // const [cityTemp,setCityTemp] = React.useState({});
   
   const fetchCityWeather =() => {
     fetch(
@@ -14,13 +14,14 @@ function App() {
     )
     .then((res) => res.json())
     .then((result) => {
-      console.log("Result is result",result);
+      // console.log("Result is result",result);
       setCityWeather(result);
-      setCityTemp(result.main);
+      // setCityTemp(result.main);
     });
   };
+  
   return (
-    <>
+    <div className={(typeof cityWeather.main != "undefined") ? ((cityWeather.main.temp-271.15 > 16) ? 'app warm' : 'app') : 'app'}>
     <CityInput 
     city={city}
     setCity={setCity}
@@ -28,9 +29,8 @@ function App() {
     />
     <CityWeather 
     cityWeather={cityWeather}
-    cityTemp={cityTemp}
     />
-    </>
+    </div>
   );
 }
 export default App;
