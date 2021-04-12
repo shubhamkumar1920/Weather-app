@@ -50,7 +50,7 @@ body {
   .app.warm {
     background-image: url('./components/assest/warm-bg.jpeg');
   }
-  main {
+  main .app {
     min-height: 81vh;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75));
     padding: 25px;
